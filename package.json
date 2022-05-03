@@ -1,8 +1,33 @@
 {
-  "name": "expo-image-crop",
-  "version": "1.0.4",
-  "description": "Crop, rotate and flip images without detach your expo project!",
-  "main": "index.js",
+  "_from": "git+ssh://git@github.com/auting/expo-image-crop.git",
+  "_id": "@auting/expo-image-crop@1.0.4",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/@auting/expo-image-crop",
+  "_phantomChildren": {
+    "lodash": "4.17.21",
+    "prop-types": "15.8.1",
+    "yargs": "15.4.1"
+  },
+  "_requested": {
+    "type": "git",
+    "raw": "git+ssh://git@github.com/auting/expo-image-crop.git",
+    "rawSpec": "git+ssh://git@github.com/auting/expo-image-crop.git",
+    "saveSpec": "git+ssh://git@github.com/auting/expo-image-crop.git",
+    "fetchSpec": "ssh://git@github.com/auting/expo-image-crop.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+ssh://git@github.com/auting/expo-image-crop.git#74103c65a72b9f10f28962d956796f496f368b04",
+  "_spec": "git+ssh://git@github.com/auting/expo-image-crop.git",
+  "_where": "C:\\Progetti\\auting\\app",
+  "bugs": {
+    "url": "https://github.com/auting/expo-image-crop/issues"
+  },
+  "bundleDependencies": false,
   "dependencies": {
     "babel-eslint": "^10.0.1",
     "eslint": "^5.11.1",
@@ -17,10 +42,12 @@
     "react-native-iphone-x-helper": "^1.2.1",
     "react-native-vector-icons": "^6.6.0"
   },
+  "deprecated": false,
+  "description": "Crop, rotate and flip images without detach your expo project!",
   "devDependencies": {
     "babel-preset-expo": "^5.0.0"
   },
-  "private": false,
+  "homepage": "https://github.com/auting/expo-image-crop",
   "keywords": [
     "expo",
     "react-native",
@@ -29,12 +56,12 @@
     "rotate"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/brunon80/expo-image-crop",
-  "bugs": {
-    "url": "https://github.com/brunon80/expo-image-crop/issues"
-  },
+  "main": "index.js",
+  "name": "@auting/expo-image-crop",
+  "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/brunon80/expo-image-crop"
-  }
+    "url": "git+https://github.com/auting/expo-image-crop.git"
+  },
+  "version": "1.0.4"
 }
