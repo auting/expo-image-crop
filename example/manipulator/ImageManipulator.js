@@ -454,7 +454,7 @@ class ExpoImageManipulator extends Component {
                             source={{ uri }}
                             resizeMode={imageRatio >= 1 ? 'contain' : 'contain'}
                             width={width}
-                            height={originalHeight}
+                            height={deviceCanvasHeight}
                             // onLayout={this.calculateMaxSizes}
                         />
                         {!!cropMode && uri && (
