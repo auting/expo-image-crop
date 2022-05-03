@@ -283,7 +283,7 @@ class ExpoImageManipulator extends Component {
     render() {
         const {
             isVisible,
-            onPictureChoosed,
+            onPictureChosen,
             borderColor,
             allowRotate = true,
             allowFlip = true,
@@ -373,13 +373,6 @@ class ExpoImageManipulator extends Component {
                                                     >
                                                         <Icon size={20} name="rotate-left" color="white" />
                                                     </TouchableOpacity>
-                                                    <TouchableOpacity onPress={() => this.onFlipImage('vertical')}
-                                                        style={{
-                                                            marginLeft: 10, width: 32, height: 32, alignItems: 'center', justifyContent: 'center',
-                                                        }}
-                                                    >
-                                                        <MaterialIcon style={{ transform: [{ rotate: '270deg' }] }} size={20} name="flip" color="white" />
-                                                    </TouchableOpacity>
                                                 </View>
                                             )
                                         }
@@ -387,7 +380,13 @@ class ExpoImageManipulator extends Component {
                                             allowFlip
                                             && (
                                                 <View style={{ flexDirection: 'row' }}>
-
+                                                    <TouchableOpacity onPress={() => this.onFlipImage('vertical')}
+                                                        style={{
+                                                            marginLeft: 10, width: 32, height: 32, alignItems: 'center', justifyContent: 'center',
+                                                        }}
+                                                    >
+                                                        <MaterialIcon style={{ transform: [{ rotate: '270deg' }] }} size={20} name="flip" color="white" />
+                                                    </TouchableOpacity>
                                                     <TouchableOpacity onPress={() => this.onFlipImage('horizontal')}
                                                         style={{
                                                             marginLeft: 10, width: 32, height: 32, alignItems: 'center', justifyContent: 'center',
@@ -395,7 +394,16 @@ class ExpoImageManipulator extends Component {
                                                     >
                                                         <MaterialIcon size={20} name="flip" color="white" />
                                                     </TouchableOpacity>
-                                                    <TouchableOpacity onPress={() => { onPictureChoosed({ uri, base64 }); this.onToggleModal() }}
+                                                </View>
+                                            )
+                                        }
+                                        {
+                                            (
+                                                <View style={{ flexDirection: 'row' }}>
+                                                    <TouchableOpacity onPress={() => { 
+                                                        this.props.onPictureChosen({ uri, base64 }); 
+                                                        this.onToggleModal() 
+                                                    }}
                                                         style={{
                                                             marginLeft: 10, width: 60, height: 32, alignItems: 'center', justifyContent: 'center',
                                                         }}
@@ -486,7 +494,7 @@ class ExpoImageManipulator extends Component {
 export default ExpoImageManipulator
 
 ExpoImageManipulator.defaultProps = {
-    onPictureChoosed: ({ uri, base64 }) => console.log('URI:', uri, base64),
+    onPictureChosen: ({ uri, base64 }) => console.log('URI:', uri, base64),
     borderColor: '#a4a4a4',
     btnTexts: {
         crop: 'Crop',
@@ -505,7 +513,7 @@ ExpoImageManipulator.defaultProps = {
 ExpoImageManipulator.propTypes = {
     borderColor: PropTypes.string,
     isVisible: PropTypes.bool.isRequired,
-    onPictureChoosed: PropTypes.func,
+    onPictureChosen: PropTypes.func,
     btnTexts: PropTypes.object,
     fixedMask: PropTypes.object,
     saveOptions: PropTypes.object,
