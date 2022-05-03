@@ -168,14 +168,14 @@ class ExpoImageManipulator extends Component {
 
     getCropBounds = (actualWidth, actualHeight) => {
         const imageRatio = actualHeight / actualWidth
-        let originalHeight = Dimensions.get('window').height - 64
+        let deviceCanvasHeight = Dimensions.get('window').height - 64
         if (isIphoneX()) {
-            originalHeight = Dimensions.get('window').height - 122
+            deviceCanvasHeight = Dimensions.get('window').height - 122
         }
-        const renderedImageWidth = imageRatio < (originalHeight / width) ? width : originalHeight / imageRatio
-        const renderedImageHeight = imageRatio < (originalHeight / width) ? width * imageRatio : originalHeight
+        const renderedImageWidth = imageRatio < (deviceCanvasHeight / width) ? width : deviceCanvasHeight / imageRatio
+        const renderedImageHeight = imageRatio < (deviceCanvasHeight / width) ? width * imageRatio : deviceCanvasHeight
 
-        const renderedImageY = (originalHeight - renderedImageHeight) / 2.0
+        const renderedImageY = (deviceCanvasHeight - renderedImageHeight) / 2.0
         const renderedImageX = (width - renderedImageWidth) / 2.0
 
         const renderImageObj = {
@@ -299,17 +299,19 @@ class ExpoImageManipulator extends Component {
         } = this.state
 
         const imageRatio = this.actualSize.height / this.actualSize.width
-        let originalHeight = Dimensions.get('window').height - 64
+        let deviceCanvasHeight = Dimensions.get('window').height - 64
         if (isIphoneX()) {
-            originalHeight = Dimensions.get('window').height - 122
+            deviceCanvasHeight = Dimensions.get('window').height - 122
         }
 
-        const cropRatio = originalHeight / width
+        const cropRatio = this.props.ratio ? this.props.ratio.height / this.props.ratio.width : deviceCanvasHeight / width
 
-        const cropWidth = imageRatio < cropRatio ? width : originalHeight / imageRatio
-        const cropHeight = imageRatio < cropRatio ? width * imageRatio : originalHeight
+//        const cropWidth = imageRatio < cropRatio ? width : deviceCanvasHeight / imageRatio
+//        const cropHeight = imageRatio < cropRatio ? width * imageRatio : deviceCanvasHeight
+        const cropWidth = (cropRatio<1) ? width : deviceCanvasHeight / cropRatio
+        const cropHeight = (cropRatio<1) ? cropWidth * cropRatio : deviceCanvasHeight
 
-        const cropInitialTop = (originalHeight - cropHeight) / 2.0
+        const cropInitialTop = (deviceCanvasHeight - cropHeight) / 2.0
         const cropInitialLeft = (width - cropWidth) / 2.0
 
 
