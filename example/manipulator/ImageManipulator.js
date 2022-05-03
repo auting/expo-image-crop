@@ -457,7 +457,7 @@ class ExpoImageManipulator extends Component {
                             height={originalHeight}
                             // onLayout={this.calculateMaxSizes}
                         />
-                        {!!cropMode && (
+                        {!!cropMode && uri && (
                             <ImageCropOverlay
                                 onLayoutChanged={(top, left, w, height) => {
                                     this.currentSize.width = w
@@ -467,8 +467,8 @@ class ExpoImageManipulator extends Component {
                                 }}
                                 initialWidth={(fixedMask && fixedMask.width) || cropWidth}
                                 initialHeight={(fixedMask && fixedMask.height) || cropHeight}
-                                initialTop={cropInitialTop}
-                                initialLeft={cropInitialLeft}
+                                initialTop={cropInitialTop || 0}
+                                initialLeft={cropInitialLeft || 0}
                                 minHeight={(fixedMask && fixedMask.height) || 100}
                                 minWidth={(fixedMask && fixedMask.width) || 100}
                                 borderColor={borderColor}
