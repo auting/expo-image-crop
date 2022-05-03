@@ -38,8 +38,8 @@ class ExpoImageManipulator extends Component {
         }
 
         this.currentSize = {
-            width: 0,
-            height: 0,
+            width: 1,
+            height: 1,
         }
 
         this.maxSizes = {
@@ -48,8 +48,8 @@ class ExpoImageManipulator extends Component {
         }
 
         this.actualSize = {
-            width: 0,
-            height: 0,
+            width: 1,
+            height: 1,
         }
     }
 
