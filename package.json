@@ -1,6 +1,6 @@
 {
   "_from": "git+ssh://git@github.com/auting/expo-image-crop.git",
-  "_id": "@auting/expo-image-crop@1.0.4",
+  "_id": "@auting/expo-image-crop@1.1.0",
   "_inBundle": false,
   "_integrity": "",
   "_location": "/@auting/expo-image-crop",
